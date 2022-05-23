@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Case Light",
+        "img": "https://i.ibb.co/6WY5njh/redd-YYMVV-q-MD6-Q-unsplash.jpg",
+        "description": "A red light on your motherboard means internal hardware is either plugged-in incorrectly or not working.Internal hardware examples include the CPU, RAM, or a graphics card.Sometimes a dead CMOS battery may be the culprit.Boot errors on the hard drive where the primary OS is installed may also cause a red light.The red light always appears after the computer turns on, but generally, it will not boot, enter the bios, or display content on the monitor.The specific error depends on the motherboard and where the red light is. Some motherboard manufacturers include labels on the board to explain what's wrong. Older motherboards may have a single, unlabeled red LED, making it more difficult to discern what's going on.",
+        "minimumQuantity": 60,
+        "availableQuantity": 100,
+        "price": 25
+    },
+    {
+        "name": "Cooler fan",
+        "img": "https://i.ibb.co/7pNN3jr/martin-katler-7w-Cxl-Bf-GMdk-unsplash.jpg",
+        "description": "A fan is a hardware device that keeps the overall computer or a computer device cool by circulating air to or from the computer or component. The picture is an example of a fan on a heat sink.The speed of a fan is measured in revolutions per minute or RPM, and the higher the RPM rating, the faster the fan spins. However, in many cases, the higher the RPM rating, the louder a fan.Nearly all case fans are mounted (attached) to the front, back, or side of a computer case using four screws, snap-in brackets, or both. If the case fan is being installed on the back or side of the computer case, most often, you use four screws to secure the fan in place. Case fans installed in the front of a computer case may be attached using snap-in brackets or screws, depending on the type of computer case. If the case fan is new, it comes with the screws needed for installation.",
+        "minimumQuantity": 100,
+        "availableQuantity": 1000,
+        "price": 15
+    },
+    {
+        "name": "Key Board",
+        "img": "https://i.ibb.co/sRXHvJR/clay-banks-PXa-QXTh-G1-FY-unsplash.jpg",
+        "description": "A keyboard is a peripheral device that enables a user to input text into a computer or any other electronic machinery. A keyboard is an input device and is the most basic way for the user to communicate with a computer. This device is patterned after its predecessor, the typewriter, from which the keyboard inherited its layout, although the keys or letters are arranged to function as electronic switches. The keys include punctuation, alphanumeric and special keys like the Windows key and various multimedia keys, which have specific functions assigned to them.There are different types of keyboard layouts manufactured based on the region and language used. This layout is the most widely used and is named after the first six letters that appear on the top row. This layout is commonly manufactured today because of its popularity. It is so common across the world - even in countries that do not use the Latin-based alphabet for their language - that some people think that it is the only kind of keyboard there is.",
+        "minimumQuantity": 120,
+        "availableQuantity": 1800,
+        "price": 20
+    }
+]
