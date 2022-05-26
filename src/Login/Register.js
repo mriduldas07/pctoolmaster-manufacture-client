@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import Loading from '../Shared/Loading';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-    const [name, setName] = useState('')
+    const [displayName, setDisplayName] = useState('')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -16,7 +16,6 @@ const Register = () => {
     const navigateToLogin = (e) => {
         navigate('/login')
     }
-    const [user] = useAuthState(auth)
     const [createUserWithEmailAndPassword
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile,
@@ -28,7 +27,7 @@ const Register = () => {
     }
 
     const handleNameBlur = e => {
-        setName(e.target.value);
+        setDisplayName(e.target.value);
     }
     const handleEmailBlur = e => {
         setEmail(e.target.value);
@@ -51,7 +50,7 @@ const Register = () => {
             return;
         }
         await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ email: email });
+        await updateProfile({ email: email, displayName: displayName });
         navigate('/home');
     }
     return (

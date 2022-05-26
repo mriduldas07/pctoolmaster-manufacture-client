@@ -39,15 +39,21 @@ const Navbar = () => {
                         <div class="dropdown dropdown-end">
                             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                                 <div class="w-10 rounded-full">
-                                    <img src="https://api.lorem.space/image/face?hash=33791" />
+                                    {
+                                        user?.photoURL
+                                            ?
+                                            <img src={user?.photoURL} alt='' />
+                                            :
+                                            <img src={'https://i.ibb.co/nBn1hP3/blank-profile-picture-973460-340.webp'} alt="" />
+                                    }
                                 </div>
                             </label>
                             <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                                 <li>
-                                    <a class="justify-between">
+                                    <Link to="/myProfile" class="justify-between">
                                         Profile
                                         <span class="badge">New</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li><Link to="/login" onClick={handleLogOut} className="text-error">Logout</Link></li>
                             </ul>
