@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ToolItem = ({ tool }) => {
-    const { name, img, description, minimumQuantity, availableQuantity, price } = tool;
+    const navigate = useNavigate();
+    const { _id, name, img, description, minimumQuantity, availableQuantity, price } = tool;
     return (
         <div class="card w-96 bg-base-100 shadow-xl">
             <figure><img src={img} alt="Shoes" /></figure>
@@ -12,7 +14,7 @@ const ToolItem = ({ tool }) => {
                 <p>Available Quantity: {availableQuantity}</p>
                 <p><small>Price: $ {price}</small></p>
                 <div class="card-actions">
-                    <button class="btn btn-success w-full">Buy Now</button>
+                    <button onClick={() => navigate(`/purchase/${_id}`)} class="btn btn-success w-full">Buy Now</button>
                 </div>
             </div>
         </div>
