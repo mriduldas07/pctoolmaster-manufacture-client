@@ -9,7 +9,7 @@ const Purchase = () => {
     const [tool, setTool] = useState({});
     const [toolError, setToolError] = useState('');
     const [quantity, setQuantity] = useState(tool.minimumQuantity);
-    const [reload, setReload] = useState(false)
+    const [isReload, setIsReload] = useState(false)
     const [user, loading] = useAuthState(auth);
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const Purchase = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setTool(data))
-    }, [id])
+    }, [id, isReload])
 
     if (loading) {
         return <Loading></Loading>
@@ -26,7 +26,37 @@ const Purchase = () => {
 
     const orderSubmit = e => {
         e.preventDefault();
+        const customer_name = e.target.name.value;
+        const customer_email = e.target.email.value;
+        const customer_phone = e.target.phone_number.value;
+        const product_name = e.target.product_name.value;
+        const quantity = e.target.orderQuantity.value;
+        const shipping_address = e.target.shipping_address.value;
+        const productId = tool._id;
 
+        const order = {
+            customer_name,
+            customer_email,
+            customer_phone,
+            product_name,
+            quantity,
+            price: tool.price,
+            shipping_address,
+            productId
+        }
+        const url = `http://localhost:5000/tools`;
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json)
+            .then(data => {
+                e.target.reset();
+                setIsReload(!isReload)
+            })
     }
 
     const changeQuantity = e => {
@@ -69,7 +99,7 @@ const Purchase = () => {
                             <label class="label">
                                 <span class="label-text">Product Name</span>
                             </label>
-                            <input type="text" name='product-name' value={tool.name} disabled class="input text-xl input-bordered w-full" />
+                            <input type="text" name='product_name' value={tool.name} disabled class="input text-xl input-bordered w-full" />
                             <label class="label">
                                 <span class="label-text">Order Quantity</span>
                             </label>
@@ -83,6 +113,15 @@ const Purchase = () => {
                             <label class="label">
                                 <span class="label-text text-xl">Available Quantity: {tool.availableQuantity}</span>
                             </label>
+                            <label class="label">
+                                <span class="label-text text-xl">Customer Phone No.</span>
+                            </label>
+                            <input type="number" name='phone_number' class="input text-xl input-bordered w-full" />
+                            <label class="label">
+                                <span class="label-text text-xl">Product Shipping Address</span>
+                            </label>
+                            <textarea name="shipping_address" className='textarea textarea-bordered'></textarea>
+                            <br />
                         </div>
                         <input type="submit" class="btn btn-success w-full uppercase" value="Order now" />
                     </form>
