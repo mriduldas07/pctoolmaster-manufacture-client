@@ -7,6 +7,8 @@ import MyProfile from "./Pages/MyProfile";
 import Purchase from "./Pages/Purchase";
 import Navbar from "./Shared/Navbar";
 import RequireAuth from "./Shared/RequireAuth";
+import Dashboard from "./user/Dashboard";
+import Orders from "./user/Orders";
 
 function App() {
   return (
@@ -22,7 +24,17 @@ function App() {
             <Purchase></Purchase>
           </RequireAuth>
         }></Route>
-        <Route path="/myProfile" element={<MyProfile></MyProfile>}></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard></Dashboard>
+            </RequireAuth>
+          }
+        >
+          <Route index element={<Orders></Orders>}></Route>
+          <Route path="myProfile" element={<MyProfile></MyProfile>}></Route>
+        </Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>

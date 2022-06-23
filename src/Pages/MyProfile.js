@@ -9,7 +9,6 @@ const MyProfile = () => {
     const [imgUrl, setImgUrl] = useState('');
     const [user, loading] = useAuthState(auth);
     const [updateProfile, updating] = useUpdateProfile(auth);
-    console.log(user);
 
     if (loading || updating) {
         return <Loading></Loading>
@@ -28,8 +27,8 @@ const MyProfile = () => {
         console.log(education, address, imgUrl);
         e.preventDefault();
         await updateProfile({ photoURL: imgUrl })
-
     }
+
     return (
         <div class="hero min-h-screen">
             <div class="hero-content flex-col gap-36 lg:flex-row-reverse">

@@ -123,7 +123,15 @@ const Purchase = () => {
                             <textarea name="shipping_address" className='textarea textarea-bordered'></textarea>
                             <br />
                         </div>
-                        <input type="submit" class="btn btn-success w-full uppercase" value="Order now" />
+                        {
+                            quantity >= tool.minimumQuantity &&
+                                quantity < tool.availableQuantity
+                                ?
+                                <input type="submit" class="btn btn-success w-full uppercase" value="Order now" />
+                                :
+                                <input type="submit" class="btn btn-success w-full uppercase" value="Order now" disabled />
+                        }
+
                     </form>
                 </div>
             </div>

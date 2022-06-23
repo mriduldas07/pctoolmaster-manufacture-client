@@ -1,5 +1,4 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../firebase.init';
@@ -50,8 +49,8 @@ const Navbar = () => {
                             </label>
                             <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                                 <li>
-                                    <Link to="/myProfile" class="justify-between">
-                                        Profile
+                                    <Link to="/dashboard" class="justify-between">
+                                        Dashboard
                                         <span class="badge">New</span>
                                     </Link>
                                 </li>
