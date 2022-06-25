@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Order = ({ details, index, refetch }) => {
     const {
