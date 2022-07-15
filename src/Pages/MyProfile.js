@@ -24,7 +24,6 @@ const MyProfile = () => {
     }
 
     const updateProfileSubmit = async e => {
-        console.log(education, address, imgUrl);
         e.preventDefault();
         await updateProfile({ photoURL: imgUrl })
     }

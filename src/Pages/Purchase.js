@@ -91,15 +91,15 @@ const Purchase = () => {
                             <label class="label">
                                 <span class="label-text">Customer Email</span>
                             </label>
-                            <input type="text" name='email' value={user.email} disabled class="input text-xl input-bordered w-full" />
+                            <input type="text" name='email' value={user.email} readOnly class="input text-xl input-bordered w-full" />
                             <label class="label">
                                 <span class="label-text">Customer Name</span>
                             </label>
-                            <input type="text" name='name' value={user.displayName} disabled class="input text-xl input-bordered w-full" />
+                            <input type="text" name='name' value={user.displayName} readOnly class="input text-xl input-bordered w-full" />
                             <label class="label">
                                 <span class="label-text">Product Name</span>
                             </label>
-                            <input type="text" name='product_name' value={tool.name} disabled class="input text-xl input-bordered w-full" />
+                            <input type="text" name='product_name' value={tool.name} readOnly class="input text-xl input-bordered w-full" />
                             <label class="label">
                                 <span class="label-text">Order Quantity</span>
                             </label>

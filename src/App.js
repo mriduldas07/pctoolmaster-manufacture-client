@@ -9,6 +9,7 @@ import Navbar from "./Shared/Navbar";
 import RequireAuth from "./Shared/RequireAuth";
 import Dashboard from "./user/Dashboard";
 import Orders from "./user/Orders";
+import Review from "./user/Review";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         >
           <Route index element={<Orders></Orders>}></Route>
           <Route path="myProfile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="review" element={<Review></Review>}></Route>
         </Route>
       </Routes>
       <ToastContainer></ToastContainer>
