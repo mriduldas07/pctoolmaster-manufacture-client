@@ -10,6 +10,7 @@ const Navbar = () => {
     }
     const navItem = <>
         <li><NavLink to={`/home`}>Home</NavLink></li>
+        <li><NavLink to={`/blogs`}>Blogs</NavLink></li>
         <li><NavLink to={`/contactUs`}>Contact us</NavLink></li>
         {
             user ? '' : <li><NavLink to={`/login`}>Login</NavLink></li>
