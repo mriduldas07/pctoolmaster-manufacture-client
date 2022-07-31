@@ -8,6 +8,8 @@ import Register from "./Login/Register";
 import Home from "./Pages/Home/Home";
 import MyProfile from "./Pages/MyProfile";
 import Purchase from "./Pages/Purchase";
+import ErrorPage from "./Shared/ErrorPage";
+import Footer from "./Shared/Footer";
 import Navbar from "./Shared/Navbar";
 import RequireAdmin from "./Shared/RequireAdmin";
 import RequireAuth from "./Shared/RequireAuth";
@@ -48,7 +50,9 @@ function App() {
             </RequireAdmin>
           }></Route>
         </Route>
+        <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
       </Routes>
+      <Footer></Footer>
       <ToastContainer></ToastContainer>
     </div>
   );
