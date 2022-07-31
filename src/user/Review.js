@@ -38,7 +38,7 @@ const Review = () => {
         return <Loading></Loading>
     }
     return (
-        <div className="">
+        <div>
             <label className="btn btn-success btn-outline" htmlFor="AddReview-Modal">
                 Add Review
             </label>

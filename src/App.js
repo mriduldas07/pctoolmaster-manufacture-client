@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import ManageUser from "./admin/ManageUser";
 import Blogs from "./common/Blogs";
 import ContactUs from "./common/ContactUs";
 import Login from "./Login/Login";
@@ -8,6 +9,7 @@ import Home from "./Pages/Home/Home";
 import MyProfile from "./Pages/MyProfile";
 import Purchase from "./Pages/Purchase";
 import Navbar from "./Shared/Navbar";
+import RequireAdmin from "./Shared/RequireAdmin";
 import RequireAuth from "./Shared/RequireAuth";
 import Dashboard from "./user/Dashboard";
 import Orders from "./user/Orders";
@@ -40,6 +42,11 @@ function App() {
           <Route index element={<Orders></Orders>}></Route>
           <Route path="myProfile" element={<MyProfile></MyProfile>}></Route>
           <Route path="review" element={<Review></Review>}></Route>
+          <Route path="manageUser" element={
+            <RequireAdmin>
+              <ManageUser></ManageUser>
+            </RequireAdmin>
+          }></Route>
         </Route>
       </Routes>
       <ToastContainer></ToastContainer>

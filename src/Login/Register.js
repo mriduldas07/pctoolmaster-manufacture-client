@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../firebase.init';
 import Loading from '../Shared/Loading';
 import { toast } from 'react-toastify';
+import useToken from '../hooks/useToken';
 
 const Register = () => {
     const [displayName, setDisplayName] = useState('')
@@ -16,14 +17,20 @@ const Register = () => {
     const navigateToLogin = (e) => {
         navigate('/login')
     }
-    const [createUserWithEmailAndPassword
+    const [createUserWithEmailAndPassword, user, loading
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile,
         updating,
     ] = useUpdateProfile(auth);
 
-    if (updating) {
+    const [token] = useToken(user);
+
+    if (updating || loading) {
         return <Loading></Loading>
+    }
+
+    if (token || user) {
+        navigate('/home');
     }
 
     const handleNameBlur = e => {
@@ -51,7 +58,6 @@ const Register = () => {
         }
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ email: email, displayName: displayName });
-        navigate('/home');
     }
     return (
         <div class="hero min-h-screen">

@@ -7,6 +7,7 @@ const Navbar = () => {
     const [user] = useAuthState(auth);
     const handleLogOut = e => {
         signOut(auth);
+        localStorage.removeItem('accessToken')
     }
     const navItem = <>
         <li><NavLink to={`/home`}>Home</NavLink></li>

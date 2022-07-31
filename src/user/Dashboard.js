@@ -4,9 +4,11 @@ import { Link, Outlet } from 'react-router-dom';
 import auth from '../firebase.init';
 import Loading from '../Shared/Loading';
 import { AiOutlineBars } from "react-icons/ai";
+import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
     const [user, loading, error] = useAuthState(auth);
+    const [admin] = useAdmin(user)
 
     if (loading) {
         return <Loading></Loading>
@@ -28,6 +30,11 @@ const Dashboard = () => {
                 <li>
                     <Link to="/dashboard/myProfile">My Profile</Link>
                 </li>
+                {
+                    admin && <li>
+                        <Link to="/dashboard/manageUser">Manage User</Link>
+                    </li>
+                }
             </>
         </React.Fragment>
     )
@@ -56,9 +63,9 @@ const Dashboard = () => {
                     </div>
                     <Outlet />
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side -translate-x-3 translate-y-5">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+                    <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content lg:bg-transparent">
                         {dashboardNavItem}
                     </ul>
                 </div>
