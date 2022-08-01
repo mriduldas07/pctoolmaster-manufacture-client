@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Review from "../../user/Review";
+import HomeReview from "./HomeReview";
 
 const HomeReviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/review`)
+        fetch(`https://dry-ridge-79622.herokuapp.com/review`)
             .then((res) => res.json())
             .then((data) => setReviews(data));
     }, []);
@@ -15,8 +15,8 @@ const HomeReviews = () => {
                 Our Customer Review
             </h5>
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center items-center">
-                {reviews.map((review) => (
-                    <Review key={review._id} details={review} />
+                {reviews?.slice(0, 3)?.map((review) => (
+                    <HomeReview key={review._id} details={review} />
                 ))}
             </div>
         </div>

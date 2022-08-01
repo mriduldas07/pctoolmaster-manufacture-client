@@ -5,7 +5,7 @@ import ToolItem from './ToolItem';
 
 
 const Tools = () => {
-    const { data: tools, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()))
+    const { data: tools, isLoading } = useQuery('tools', () => fetch('https://dry-ridge-79622.herokuapp.com/tools').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>

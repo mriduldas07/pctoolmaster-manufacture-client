@@ -9,7 +9,7 @@ const Orders = () => {
     const [user, loading, error] = useAuthState(auth);
 
     const { isLoading, queryError, refetch, data } = useQuery('orderData', () =>
-        fetch(`http://localhost:5000/orders/${user?.email}`, {
+        fetch(`https://dry-ridge-79622.herokuapp.com/orders/${user?.email}`, {
             method: "GET",
         }).then(res => res.json())
     );

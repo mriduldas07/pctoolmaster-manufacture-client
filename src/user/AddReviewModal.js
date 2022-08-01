@@ -13,7 +13,7 @@ const AddReviewModal = () => {
     const [rating, setRating] = useState("");
 
     useEffect(() => {
-        const url = `http://localhost:5000/tools`;
+        const url = `https://dry-ridge-79622.herokuapp.com/tools`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTools(data))
@@ -40,7 +40,7 @@ const AddReviewModal = () => {
             reviewPhoto: photoURL
         };
 
-        fetch(`http://localhost:5000/review`, {
+        fetch(`https://dry-ridge-79622.herokuapp.com/review`, {
             method: "POST",
             headers: {
                 "content-type": "application/json",
