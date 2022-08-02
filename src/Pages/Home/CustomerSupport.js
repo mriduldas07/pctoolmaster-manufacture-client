@@ -31,7 +31,7 @@ const CustomerSupport = () => {
                                 setup, and more.
                             </li>
                         </ul>
-                        <button className="btn btn-success" onClick={() => navigate('/dashboard')}>Get Started</button>
+                        <button className="btn btn-success" onClick={() => navigate('/contactUs')}>Get Started</button>
                     </div>
                 </div>
             </div>
