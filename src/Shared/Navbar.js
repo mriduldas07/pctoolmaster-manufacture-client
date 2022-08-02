@@ -46,7 +46,7 @@ const Navbar = () => {
                                             ?
                                             <img src={user?.photoURL} alt='' />
                                             :
-                                            <img src={'https://i.ibb.co/nBn1hP3/blank-profile-picture-973460-340.webp'} alt="" />
+                                            <img src={'https://i.ibb.co/56d3Hfw/images.png'} alt="" />
                                     }
                                 </div>
                             </label>
