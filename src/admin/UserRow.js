@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const UserRow = ({ index, user, refetch }) => {
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`https://dry-ridge-79622.herokuapp.com/user/admin/${email}`, {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,6 +23,19 @@ const UserRow = ({ index, user, refetch }) => {
                 }
             })
     }
+    const removeAdmin = () => {
+        fetch(`http://localhost:5000/user/removeAdmin/${email}`, {
+            method: "PUT",
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                toast.warning("Remove User Admin");
+                refetch();
+            })
+    }
     return (
         <tr key={index}>
             <td>{index = index + 1}</td>
@@ -35,7 +48,7 @@ const UserRow = ({ index, user, refetch }) => {
                 }
             </td>
             <td>
-                <button className='btn btn-error btn-outline btn-sm'>
+                <button className='btn btn-error btn-outline btn-sm' onClick={removeAdmin}>
                     Remove admin
                 </button>
             </td>

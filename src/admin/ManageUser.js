@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import UserRow from './UserRow';
 
 const ManageUser = () => {
-    const { data: users, isLoading, refetch } = useQuery("user", () => fetch('https://dry-ridge-79622.herokuapp.com/user').then(res => res.json()));
+    const { data: users, isLoading, refetch } = useQuery("user", () => fetch('http://localhost:5000/user').then(res => res.json()));
     if (isLoading) {
         return <Loading></Loading>
     }

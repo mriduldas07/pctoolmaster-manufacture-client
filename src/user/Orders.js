@@ -9,7 +9,7 @@ const Orders = () => {
     const [user, loading, error] = useAuthState(auth);
 
     const { isLoading, queryError, refetch, data } = useQuery('orderData', () =>
-        fetch(`https://dry-ridge-79622.herokuapp.com/orders/${user?.email}`, {
+        fetch(`http://localhost:5000/orders/${user?.email}`, {
             method: "GET",
         }).then(res => res.json())
     );
@@ -24,7 +24,7 @@ const Orders = () => {
 
     return (
         <div>
-            <h2 className="text-success text-2xl">Total Order : {data.length}</h2>
+            <h2 className="text-success text-2xl">Total Order : {data?.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full">
                     <thead>
@@ -42,7 +42,7 @@ const Orders = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((order, index) => (
+                        {data?.map((order, index) => (
                             <Order
                                 key={order._id}
                                 index={index}

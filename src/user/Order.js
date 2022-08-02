@@ -17,7 +17,7 @@ const Order = ({ details, index, refetch }) => {
     const handleOrderCancel = () => {
         const proceed = window.confirm("Are you sure to delete this order?");
         if (proceed) {
-            fetch(`https://dry-ridge-79622.herokuapp.com/orderCancel/${productId}`, {
+            fetch(`http://localhost:5000/orderCancel/${productId}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())

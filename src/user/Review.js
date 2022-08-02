@@ -14,7 +14,7 @@ const Review = () => {
     const [isReload, setIsReload] = useState(false)
 
     useEffect(() => {
-        fetch(`https://dry-ridge-79622.herokuapp.com/review/${user?.email}`)
+        fetch(`http://localhost:5000/review/${user?.email}`)
             .then(res => res.json())
             .then(result => setData(result))
     }, [data]);
@@ -22,7 +22,7 @@ const Review = () => {
     const handleReviewCancel = id => {
         const proceed = window.confirm("Are you want to delete this review??");
         if (proceed) {
-            fetch(`https://dry-ridge-79622.herokuapp.com/review/${id}`, {
+            fetch(`http://localhost:5000/review/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
