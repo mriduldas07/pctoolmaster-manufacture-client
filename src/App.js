@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import ManageOrders from "./admin/ManageOrders";
 import ManageUser from "./admin/ManageUser";
 import Blogs from "./common/Blogs";
 import ContactUs from "./common/ContactUs";
@@ -47,6 +48,11 @@ function App() {
           <Route path="manageUser" element={
             <RequireAdmin>
               <ManageUser></ManageUser>
+            </RequireAdmin>
+          }></Route>
+          <Route path="manageOrders" element={
+            <RequireAdmin>
+              <ManageOrders></ManageOrders>
             </RequireAdmin>
           }></Route>
         </Route>

@@ -17,25 +17,48 @@ const Dashboard = () => {
     if (error) {
         console.log(error);
     }
+    const adminList = <>
+        <li>
+            <Link to="/dashboard">My Order</Link>
+        </li>
+        <li>
+            <Link to="/dashboard/review">My Review</Link>
+        </li>
+        <li>
+            <Link to="/dashboard/myProfile">My Profile</Link>
+        </li>
+        <li>
+            <Link to="/dashboard/manageUser">Manage User</Link>
+        </li>
+        <li>
+            <Link to="/dashboard/manageOrders">Manage Orders</Link>
+        </li>
+    </>
+    const userList = <>
+        <li>
+            <Link to="/dashboard">My Order</Link>
+        </li>
+        <li>
+            <Link to="/dashboard/review">My Review</Link>
+        </li>
+        <li>
+            <Link to="/dashboard/myProfile">My Profile</Link>
+        </li>
+    </>
 
     const dashboardNavItem = (
         <React.Fragment>
-            <>
-                <li>
-                    <Link to="/dashboard">My Order</Link>
-                </li>
-                <li>
-                    <Link to="/dashboard/review">My Review</Link>
-                </li>
-                <li>
-                    <Link to="/dashboard/myProfile">My Profile</Link>
-                </li>
-                {
-                    admin && <li>
-                        <Link to="/dashboard/manageUser">Manage User</Link>
-                    </li>
-                }
-            </>
+            {
+                admin === true ? (
+                    <ul>
+                        {adminList}
+                    </ul>
+                ) : (
+                    <ul>
+                        {userList}
+                    </ul>
+                )
+            }
         </React.Fragment>
     )
     return (

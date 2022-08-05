@@ -46,11 +46,23 @@ const UserRow = ({ index, user, refetch }) => {
                         Make admin
                     </button>
                 }
+                {
+                    role === 'admin' && <button onClick={makeAdmin} className='btn btn-sm' disabled>
+                        Already admin
+                    </button>
+                }
             </td>
             <td>
-                <button className='btn btn-error btn-outline btn-sm' onClick={removeAdmin}>
-                    Remove admin
-                </button>
+                {
+                    role === 'admin' && <button className='btn btn-error btn-outline btn-sm' onClick={removeAdmin}>
+                        Remove admin
+                    </button>
+                }
+                {
+                    role !== 'admin' && <button className='btn btn-sm' onClick={removeAdmin} disabled>
+                        Remove admin
+                    </button>
+                }
             </td>
         </tr>
     );
