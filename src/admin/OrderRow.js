@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify'
 
 const OrderRow = ({ order, index }) => {
+    const [isReload, setIsReload] = useState(false);
     const {
         customer_name,
         customer_email,
@@ -8,7 +10,21 @@ const OrderRow = ({ order, index }) => {
         product_name,
         quantity,
         shipping_address
-    } = order
+    } = order;
+
+    const deliveryItem = id => {
+        const proceed = window.confirm("Are you sure to deliverd this???");
+        if (proceed) {
+            fetch(`http://localhost:5000/orderDelivery/${id}`, {
+                method: "DELETE",
+            })
+                .then(res => res.json())
+                .then(result => {
+                    toast.success(`${product_name}, Delivery Successfully Done`)
+                    setIsReload(!isReload)
+                })
+        }
+    }
     return (
         <tr>
             <td>{(index += 1)}</td>
@@ -19,7 +35,7 @@ const OrderRow = ({ order, index }) => {
             <td>{quantity}</td>
             <td>{shipping_address}</td>
             <td>
-                <button className="btn btn-sm btn-success btn-outline">Delivery</button>
+                <button className="btn btn-sm btn-success btn-outline" onClick={() => deliveryItem(order._id)}>Delivery</button>
             </td>
         </tr>
     );

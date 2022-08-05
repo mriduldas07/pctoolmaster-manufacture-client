@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Banner = () => {
     return (
-        <Carousel>
+        <Carousel autoPlay>
             <div>
                 <img src="https://i.ibb.co/SvkmjdX/brian-kostiuk-S4j-Svc-HYc-Os-unsplash.jpg" alt='' />
                 <p className="legend">Processor</p>

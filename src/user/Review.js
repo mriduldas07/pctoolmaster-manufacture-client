@@ -2,7 +2,6 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import auth from '../firebase.init';
 import Loading from '../Shared/Loading';
