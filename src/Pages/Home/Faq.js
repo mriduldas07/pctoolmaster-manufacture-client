@@ -90,7 +90,7 @@ const Faq = () => {
                     </div>
                     <div className="collapse-content">
                         <p className="text-indigo-500 text-2xl">
-                            Visit our support center or <Link to="/contactUs" className='btn btn-outline btn-success'>contact us.</Link>
+                            Visit our support center or contact us.
                         </p>
                     </div>
                 </div>

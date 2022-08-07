@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import AddProduct from "./admin/AddProduct";
 import ManageOrders from "./admin/ManageOrders";
+import ManageProducts from "./admin/ManageProducts";
 import ManageUser from "./admin/ManageUser";
 import Blogs from "./common/Blogs";
 import ContactUs from "./common/ContactUs";
@@ -59,6 +60,11 @@ function App() {
           <Route path="addProduct" element={
             <RequireAdmin>
               <AddProduct></AddProduct>
+            </RequireAdmin>
+          }></Route>
+          <Route path="manageProduct" element={
+            <RequireAdmin>
+              <ManageProducts></ManageProducts>
             </RequireAdmin>
           }></Route>
         </Route>
