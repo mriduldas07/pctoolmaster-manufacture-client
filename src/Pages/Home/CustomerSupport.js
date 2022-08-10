@@ -6,7 +6,7 @@ const CustomerSupport = () => {
     const navigate = useNavigate()
     return (
         <div className="">
-            <h3 className="text-center text-primary text-4xl font-medium mt-10">24/7 Online customer service</h3>
+            <h3 className="text-center text-accent text-4xl font-medium mt-10">24/7 Online customer service</h3>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img

@@ -12,7 +12,7 @@ const Faq = () => {
                     tabIndex="0"
                     className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box max-w-lg"
                 >
-                    <div className="collapse-title text-2xl font-medium text-primary">
+                    <div className="collapse-title text-2xl font-medium text-accent">
                         Where are you located?
                     </div>
                     <div className="collapse-content">
@@ -25,7 +25,7 @@ const Faq = () => {
                     tabIndex="0"
                     className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box max-w-lg"
                 >
-                    <div className="collapse-title text-2xl font-medium text-primary">
+                    <div className="collapse-title text-2xl font-medium text-accent">
                         How much do you guys cost?
                     </div>
                     <div className="collapse-content">
@@ -40,7 +40,7 @@ const Faq = () => {
                     tabIndex="0"
                     className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box max-w-lg"
                 >
-                    <div className="collapse-title text-2xl font-medium text-primary">
+                    <div className="collapse-title text-2xl font-medium text-accent">
                         Do you charge an onboarding fee?
                     </div>
                     <div className="collapse-content">
@@ -54,7 +54,7 @@ const Faq = () => {
                     tabIndex="0"
                     className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box max-w-lg"
                 >
-                    <div className="collapse-title text-2xl font-medium text-primary">
+                    <div className="collapse-title text-2xl font-medium text-accent">
                         Do I have to sign a contract?
                     </div>
                     <div className="collapse-content">
@@ -69,7 +69,7 @@ const Faq = () => {
                     tabIndex="0"
                     className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box max-w-lg"
                 >
-                    <div className="collapse-title text-2xl font-medium text-primary">
+                    <div className="collapse-title text-2xl font-medium text-accent">
                         I only process 25 orders. Do I still have access to your support
                         team?
                     </div>
@@ -85,7 +85,7 @@ const Faq = () => {
                     tabIndex="0"
                     className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box max-w-lg"
                 >
-                    <div className="collapse-title text-2xl font-medium text-primary">
+                    <div className="collapse-title text-2xl font-medium text-accent">
                         Have more questions?
                     </div>
                     <div className="collapse-content">

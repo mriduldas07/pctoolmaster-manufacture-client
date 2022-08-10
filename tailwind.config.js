@@ -5,7 +5,7 @@ module.exports = {
       {
         mytheme: {
 
-          "primary": "#818cf8",
+          "primary": "#10b981",
 
           "secondary": "#0d9488",
 
@@ -22,6 +22,7 @@ module.exports = {
           "warning": "#facc15",
 
           "error": "#dc2626",
+
         },
       },
     ],

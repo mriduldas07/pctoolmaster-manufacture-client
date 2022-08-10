@@ -12,12 +12,13 @@ const ManageProducts = () => {
     const [user, loading] = useAuthState(auth);
     const [tools, setTools] = useState([]);
     const [toolDetails, setToolDetails] = useState(null);
+    const [isReload, setIsReload] = useState(false)
 
     useEffect(() => {
         fetch(`http://localhost:5000/tools`)
             .then(res => res.json())
             .then(data => setTools(data))
-    }, [user.email]);
+    }, [user.email, isReload]);
 
     if (loading) {
         <Loading></Loading>
@@ -35,6 +36,7 @@ const ManageProducts = () => {
                         <th>Price</th>
                         <th>Minimum Order</th>
                         <th>Quantity</th>
+                        <th>Admin Email</th>
                         <th>Delete</th>
                         <th>Update</th>
                         <th>Status</th>
@@ -56,6 +58,8 @@ const ManageProducts = () => {
                     details={toolDetails}
                     key={toolDetails._id}
                     setProductDetails={setToolDetails}
+                    isReload={isReload}
+                    setIsReload={setIsReload}
                 />
             )}
             {toolDetails && (
@@ -63,6 +67,8 @@ const ManageProducts = () => {
                     details={toolDetails}
                     key={toolDetails._id}
                     setProductDetails={setToolDetails}
+                    isReload={isReload}
+                    setIsReload={setIsReload}
                 />
             )}
         </div>

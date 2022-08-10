@@ -1,22 +1,29 @@
 import React from 'react';
+import { useState } from 'react';
 
 const ProductRow = ({ details, index, setToolDetails }) => {
-    const { name, description, img, min_Order, price, stock, status } = details;
+    const { name, description, img, minimumQuantity, price, admin_email, availableQuantity, status } = details;
+    const [seeMore, setSeeMore] = useState(false);
     return (
         <tr>
             <th>{(index += 1)}</th>
             <td>{name}</td>
             <td>
+
                 {
-                    description?.slice(0, 200) + '...'
+                    seeMore ? description : description?.slice(0, 50) + '...'
+                }
+                {
+                    seeMore || <button className='btn btn-outline btn-xs btn-success' onClick={() => setSeeMore(!seeMore)}>see more</button>
                 }
             </td>
             <td>
                 <img src={img} alt={name} />
             </td>
             <td>{price}</td>
-            <td>{min_Order}</td>
-            <td>{stock}</td>
+            <td>{minimumQuantity}</td>
+            <td>{availableQuantity}</td>
+            <td>{admin_email}</td>
             <td>
                 <label
                     htmlFor="delete-confirm-modal"
@@ -39,7 +46,7 @@ const ProductRow = ({ details, index, setToolDetails }) => {
                 {status ? (
                     "Published"
                 ) : (
-                    "unPublished"
+                    "Not Published"
                 )}
             </td>
         </tr>
