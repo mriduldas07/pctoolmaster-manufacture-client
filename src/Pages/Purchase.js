@@ -78,49 +78,49 @@ const Purchase = () => {
         }
     }
     return (
-        <div class="hero min-h-screen">
-            <div class="hero-content text-center">
-                <div class="max-w-lg">
-                    <div class="card max-w-96 shadow-xl">
-                        <div class="card-body">
+        <div className="hero min-h-screen">
+            <div className="hero-content text-center">
+                <div className="max-w-lg">
+                    <div className="card max-w-96 shadow-xl">
+                        <div className="card-body">
                             <img src={tool.img} alt="" />
                         </div>
                     </div>
-                    <h1 class="text-5xl font-bold mt-5">{tool.name}</h1>
-                    <p class="py-6">{tool.description}</p>
+                    <h1 className="text-5xl font-bold mt-5">{tool.name}</h1>
+                    <p className="py-6">{tool.description}</p>
                     <form onSubmit={orderSubmit}>
-                        <div class="form-control w-full">
-                            <label class="label">
-                                <span class="label-text">Customer Email</span>
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Customer Email</span>
                             </label>
-                            <input type="text" name='email' value={user.email} readOnly class="input text-xl input-bordered w-full" />
-                            <label class="label">
-                                <span class="label-text">Customer Name</span>
+                            <input type="text" name='email' value={user.email} readOnly className="input text-xl input-bordered w-full" />
+                            <label className="label">
+                                <span className="label-text">Customer Name</span>
                             </label>
-                            <input type="text" name='name' value={user.displayName} readOnly class="input text-xl input-bordered w-full" />
-                            <label class="label">
-                                <span class="label-text">Product Name</span>
+                            <input type="text" name='name' value={user.displayName} readOnly className="input text-xl input-bordered w-full" />
+                            <label className="label">
+                                <span className="label-text">Product Name</span>
                             </label>
-                            <input type="text" name='product_name' value={tool.name} readOnly class="input text-xl input-bordered w-full" />
-                            <label class="label">
-                                <span class="label-text">Order Quantity</span>
+                            <input type="text" name='product_name' value={tool.name} readOnly className="input text-xl input-bordered w-full" />
+                            <label className="label">
+                                <span className="label-text">Order Quantity</span>
                             </label>
-                            <input type="number" name='orderQuantity' placeholder={`Minimum Quantity ${tool.minimumQuantity}`} class="input text-xl input-bordered w-full max-w-xm" onChange={changeQuantity} />
-                            <label class="label">
-                                <span class="label-text text-error">{toolError}</span>
+                            <input type="number" name='orderQuantity' placeholder={`Minimum Quantity ${tool.minimumQuantity}`} className="input text-xl input-bordered w-full max-w-xm" onChange={changeQuantity} />
+                            <label className="label">
+                                <span className="label-text text-error">{toolError}</span>
                             </label>
-                            <label class="label">
-                                <span class="label-text text-xl">Price (per unit): ${tool.price}</span>
+                            <label className="label">
+                                <span className="label-text text-xl">Price (per unit): ${tool.price}</span>
                             </label>
-                            <label class="label">
-                                <span class="label-text text-xl">Available Quantity: {tool.availableQuantity}</span>
+                            <label className="label">
+                                <span className="label-text text-xl">Available Quantity: {tool.availableQuantity}</span>
                             </label>
-                            <label class="label">
-                                <span class="label-text text-xl">Customer Phone No.</span>
+                            <label className="label">
+                                <span className="label-text text-xl">Customer Phone No.</span>
                             </label>
-                            <input type="number" name='phone_number' class="input text-xl input-bordered w-full" />
-                            <label class="label">
-                                <span class="label-text text-xl">Product Shipping Address</span>
+                            <input type="number" name='phone_number' className="input text-xl input-bordered w-full" />
+                            <label className="label">
+                                <span className="label-text text-xl">Product Shipping Address</span>
                             </label>
                             <textarea name="shipping_address" className='textarea textarea-bordered'></textarea>
                             <br />
@@ -129,9 +129,9 @@ const Purchase = () => {
                             quantity >= tool.minimumQuantity &&
                                 quantity < tool.availableQuantity
                                 ?
-                                <input type="submit" class="btn btn-success w-full uppercase" value="Order now" />
+                                <input type="submit" className="btn btn-success w-full uppercase" value="Order now" />
                                 :
-                                <input type="submit" class="btn btn-success w-full uppercase" value="Order now" disabled />
+                                <input type="submit" className="btn btn-success w-full uppercase" value="Order now" disabled />
                         }
 
                     </form>

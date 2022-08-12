@@ -28,10 +28,10 @@ const SocialLogin = () => {
     return (
         <div className='flex justify-center gap-x-3 w-full'>
             <div className="tooltip" data-tip="Sign In With Google">
-                <button class="btn btn-ghost btn-outline" onClick={() => signInWithGoogle()}><FcGoogle size={30}></FcGoogle></button>
+                <button className="btn btn-ghost btn-outline" onClick={() => signInWithGoogle()}><FcGoogle size={30}></FcGoogle></button>
             </div>
             <div className="tooltip" data-tip="Sign In With GitHub">
-                <button class="btn btn-ghost btn-outline" onClick={() => signInWithGithub()}><AiOutlineGithub size={30}></AiOutlineGithub></button>
+                <button className="btn btn-ghost btn-outline" onClick={() => signInWithGithub()}><AiOutlineGithub size={30}></AiOutlineGithub></button>
             </div>
         </div>
     );

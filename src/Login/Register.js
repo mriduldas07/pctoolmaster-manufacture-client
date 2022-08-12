@@ -64,47 +64,47 @@ const Register = () => {
     }
     return (
         <>
-            <div class="hero min-h-screen">
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                    <div class="text-center flex-1 lg:text-left">
+            <div className="hero min-h-screen">
+                <div className="hero-content flex-col lg:flex-row-reverse">
+                    <div className="text-center flex-1 lg:text-left">
                         <img className='w-96 rounded-lg' src="https://i.ibb.co/WgTwQr8/4860253.jpg" alt="" />
                     </div>
-                    <div class="card flex-1 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div class="card-body">
+                    <div className="card flex-1 w-full max-w-sm shadow-2xl bg-base-100">
+                        <div className="card-body">
                             <h1 className='text-center text-3xl'>Register</h1>
                             <form onSubmit={handleRegisterOnSubmit}>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Name</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Name</span>
                                     </label>
-                                    <input onBlur={handleNameBlur} type="text" name='name' placeholder="Your Name" class="input input-bordered" />
+                                    <input onBlur={handleNameBlur} type="text" name='name' placeholder="Your Name" className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Email</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Email</span>
                                     </label>
-                                    <input onBlur={handleEmailBlur} type="email" name='email' placeholder="Your Email" class="input input-bordered" />
+                                    <input onBlur={handleEmailBlur} type="email" name='email' placeholder="Your Email" className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Password</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Password</span>
                                     </label>
-                                    <input onBlur={handlePasswordBlur} type="password" name='password' placeholder="Password" class="input input-bordered" />
+                                    <input onBlur={handlePasswordBlur} type="password" name='password' placeholder="Password" className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Confirm Password</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Confirm Password</span>
                                     </label>
-                                    <input onBlur={handleConfirmPasswordBlur} type="password" name='confirm-password' placeholder="Confirm Password" class="input input-bordered" />
-                                    <label class="label">
+                                    <input onBlur={handleConfirmPasswordBlur} type="password" name='confirm-password' placeholder="Confirm Password" className="input input-bordered" />
+                                    <label className="label">
                                         <p className='text-error'>{error}</p>
                                         <p>Already Have an account?<span
                                             onClick={navigateToLogin}
                                             className='text-success' style={{ cursor: 'pointer', fontWeight: 700 }}> Login</span></p>
                                     </label>
                                 </div>
-                                <div class="form-control mt-6">
-                                    <button class="btn btn-accent">Register</button>
+                                <div className="form-control mt-6">
+                                    <button className="btn btn-accent">Register</button>
                                 </div>
                             </form>
                         </div>

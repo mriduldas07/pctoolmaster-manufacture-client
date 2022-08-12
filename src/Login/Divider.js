@@ -2,7 +2,7 @@ import React from 'react';
 
 const Divider = () => {
     return (
-        <div class="divider">OR</div>
+        <div className="divider">OR</div>
     );
 };
 
