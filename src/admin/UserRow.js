@@ -1,7 +1,9 @@
 import React from 'react';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const UserRow = ({ index, user, refetch }) => {
+    const [newEmail, setNewEmail] = useState([user.email]);
     const { email, role } = user;
     const makeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -54,7 +56,7 @@ const UserRow = ({ index, user, refetch }) => {
             </td>
             <td>
                 {
-                    role === 'admin' && <button className='btn btn-error btn-outline btn-sm' onClick={removeAdmin}>
+                    role === 'admin' && <button className='btn btn-error btn-outline btn-sm' onClick={removeAdmin} disabled={newEmail.includes("mriduldas0325@gmail.com")}>
                         Remove admin
                     </button>
                 }

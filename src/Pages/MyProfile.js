@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuthState, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import Loading from '../Shared/Loading';
 
@@ -9,6 +9,8 @@ const MyProfile = () => {
     const [imgUrl, setImgUrl] = useState('');
     const [user, loading] = useAuthState(auth);
     const [updateProfile, updating] = useUpdateProfile(auth);
+    const [gUser, gLoading] = useSignInWithGoogle(auth);
+    console.log(gUser);
 
     if (loading || updating) {
         return <Loading></Loading>
@@ -58,7 +60,7 @@ const MyProfile = () => {
                                 <label class="label">
                                     <span class="label-text">Email</span>
                                 </label>
-                                <input type="email" value={user?.email} disabled class="input input-bordered text-lg" />
+                                <input type="email" value={user?.email} disabled={user?.email} class="input input-bordered text-lg" />
                             </div>
                             <div class="form-control">
                                 <label class="label">
