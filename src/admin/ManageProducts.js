@@ -15,7 +15,7 @@ const ManageProducts = () => {
     const [isReload, setIsReload] = useState(false)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tools`)
+        fetch(`https://dry-ridge-79622.herokuapp.com/tools`)
             .then(res => res.json())
             .then(data => setTools(data))
     }, [user.email, isReload]);

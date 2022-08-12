@@ -46,7 +46,7 @@ const UpdateProduct = ({ details, setProductDetails, setIsReload, isReload }) =>
                         status: data.status
                     };
 
-                    fetch(`http://localhost:5000/updateTool/${_id}`, {
+                    fetch(`https://dry-ridge-79622.herokuapp.com/updateTool/${_id}`, {
                         method: "PUT",
                         headers: {
                             "content-type": "application/json"

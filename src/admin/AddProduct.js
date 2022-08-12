@@ -41,7 +41,7 @@ const AddProduct = () => {
                         availableQuantity,
                         price
                     }
-                    fetch('http://localhost:5000/addTool', {
+                    fetch('https://dry-ridge-79622.herokuapp.com/addTool', {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",

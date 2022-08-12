@@ -15,7 +15,7 @@ const OrderRow = ({ order, index }) => {
     const deliveryItem = id => {
         const proceed = window.confirm("Are you sure to deliverd this???");
         if (proceed) {
-            fetch(`http://localhost:5000/orderDelivery/${id}`, {
+            fetch(`https://dry-ridge-79622.herokuapp.com/orderDelivery/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())

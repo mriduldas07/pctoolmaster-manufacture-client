@@ -13,7 +13,7 @@ const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://dry-ridge-79622.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [orders, admin])

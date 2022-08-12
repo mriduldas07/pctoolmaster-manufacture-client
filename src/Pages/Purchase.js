@@ -14,7 +14,7 @@ const Purchase = () => {
     const [user, loading] = useAuthState(auth);
 
     useEffect(() => {
-        const url = `http://localhost:5000/tools/${id}`;
+        const url = `https://dry-ridge-79622.herokuapp.com/tools/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTool(data))
@@ -45,7 +45,7 @@ const Purchase = () => {
             shipping_address,
             productId
         }
-        const url = `http://localhost:5000/tools`;
+        const url = `https://dry-ridge-79622.herokuapp.com/tools`;
         fetch(url, {
             method: "POST",
             headers: {

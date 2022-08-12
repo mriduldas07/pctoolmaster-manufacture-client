@@ -6,7 +6,7 @@ const UserRow = ({ index, user, refetch }) => {
     const [newEmail, setNewEmail] = useState([user.email]);
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://dry-ridge-79622.herokuapp.com/user/admin/${email}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -26,7 +26,7 @@ const UserRow = ({ index, user, refetch }) => {
             })
     }
     const removeAdmin = () => {
-        fetch(`http://localhost:5000/user/removeAdmin/${email}`, {
+        fetch(`https://dry-ridge-79622.herokuapp.com/user/removeAdmin/${email}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

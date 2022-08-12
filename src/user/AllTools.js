@@ -7,7 +7,7 @@ const AllTools = () => {
     const [allTool, setAllTool] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allTools')
+        fetch('https://dry-ridge-79622.herokuapp.com/allTools')
             .then(res => res.json())
             .then(data => setAllTool(data))
     }, [allTool]);

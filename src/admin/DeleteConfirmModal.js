@@ -5,7 +5,7 @@ const DeleteConfirmModal = ({ setProductDetails, details, isReload, setIsReload 
     const { name, _id } = details
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/deleteTool/${_id}`, {
+        fetch(`https://dry-ridge-79622.herokuapp.com/deleteTool/${_id}`, {
             method: "DELETE",
         })
             .then(res => res.json())
