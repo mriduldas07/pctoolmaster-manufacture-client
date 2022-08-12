@@ -125,37 +125,48 @@ const Portfolio = () => {
                         Contact Me
                     </h1>
                 </div>
-                <div className="grid gap-5 grid-cols-1 justify-start items-center">
-                    <span>
-                        <FontAwesomeIcon
-                            icon={faMailBulk}
-                            className="text-accent text-2xl"
-                        />
-                        <a className="btn btn-link" href="mailto:mriduldas0325@gmail.com">
-                            Email
-                        </a>
-                    </span>
-                    <span>
-                        <FontAwesomeIcon icon={faPhone} className="text-accent text-2xl" />
-                        <a className="btn btn-link" href="tel:01961534220">
-                            Contact Number
-                        </a>
-                    </span>
-                    <span>
-                        <FontAwesomeIcon icon={faLink} className="text-accent text-2xl" />
-                        <a
-                            className="btn btn-link"
-                            href="https://www.linkedin.com/mwlite/in/mridul-das-8ba910220"
-                        >
-                            Linkedin
-                        </a>
-                    </span>
-                    <span>
-                        <FontAwesomeIcon icon={faCode} className="text-accent text-2xl" />
-                        <a className="btn btn-link" href="https://github.com/mriduldas07">
-                            Github
-                        </a>
-                    </span>
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="grid gap-5 grid-cols-1 justify-start items-center">
+                        <span>
+                            <FontAwesomeIcon
+                                icon={faMailBulk}
+                                className="text-accent text-2xl"
+                            />
+                            <a className="btn btn-link" href="mailto:mriduldas0325@gmail.com">
+                                Email
+                            </a>
+                        </span>
+                        <span>
+                            <FontAwesomeIcon icon={faPhone} className="text-accent text-2xl" />
+                            <a className="btn btn-link" href="tel:01961534220">
+                                Contact Number
+                            </a>
+                        </span>
+                        <span>
+                            <FontAwesomeIcon icon={faLink} className="text-accent text-2xl" />
+                            <a
+                                className="btn btn-link"
+                                href="https://www.linkedin.com/mwlite/in/mridul-das-8ba910220"
+                            >
+                                Linkedin
+                            </a>
+                        </span>
+                        <span>
+                            <FontAwesomeIcon icon={faCode} className="text-accent text-2xl" />
+                            <a className="btn btn-link" href="https://github.com/mriduldas07">
+                                Github
+                            </a>
+                        </span>
+                    </div>
+                    <div class="card w-96 bg-base-100 shadow-xl">
+                        <div className="card-body">
+                            <h2>My Three Best Project Link</h2>
+                            <i>1. <a href="https://ubiquitous-rolypoly-5c27e0.netlify.app">Portfolio</a></i>
+                            <i>2. <a href="https://deft-crumble-9afc77.netlify.app
+                            ">Phone Zone (Products Stock website)</a></i>
+                            <i>3. <a href="https://travelers-web.netlify.app">Travelers(a travel guide website)</a></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
