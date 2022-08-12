@@ -19,13 +19,7 @@ const Dashboard = () => {
     }
     const adminList = <>
         <li>
-            <Link to="/dashboard">My Order</Link>
-        </li>
-        <li>
-            <Link to="/dashboard/review">My Review</Link>
-        </li>
-        <li>
-            <Link to="/dashboard/myProfile">My Profile</Link>
+            <Link to="/dashboard">My Profile</Link>
         </li>
         <li>
             <Link to="/dashboard/manageUser">Manage User</Link>
@@ -42,13 +36,13 @@ const Dashboard = () => {
     </>
     const userList = <>
         <li>
-            <Link to="/dashboard">My Order</Link>
+            <Link to="/dashboard">My Profile</Link>
+        </li>
+        <li>
+            <Link to="/dashboard/myOrders">My Order</Link>
         </li>
         <li>
             <Link to="/dashboard/review">My Review</Link>
-        </li>
-        <li>
-            <Link to="/dashboard/myProfile">My Profile</Link>
         </li>
     </>
 

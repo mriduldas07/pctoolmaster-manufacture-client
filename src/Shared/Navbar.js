@@ -2,17 +2,24 @@ import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../firebase.init';
+import Loading from './Loading';
 
 const Navbar = () => {
-    const [user] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
+
+    if (loading) {
+        <Loading></Loading>
+    }
     const handleLogOut = e => {
         signOut(auth);
         localStorage.removeItem('accessToken')
     }
     const navItem = <>
         <li><NavLink to={`/home`}>Home</NavLink></li>
+        <li><NavLink to={`/allTools`}>All Tools</NavLink></li>
         <li><NavLink to={`/blogs`}>Blogs</NavLink></li>
         <li><NavLink to={`/contactUs`}>Contact us</NavLink></li>
+        <li><NavLink to={`/portfolio`}>My Portfolio</NavLink></li>
         {
             user ? '' : <li><NavLink to={`/login`}>Login</NavLink></li>
         }
